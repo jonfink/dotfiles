@@ -1,0 +1,109 @@
+# reset DYLD_FALLBACK_LIBRARY_PATH
+unset DYLD_FALLBACK_LIBRARY_PATH
+
+export EDITOR=/usr/bin/emacs
+
+# Developer Stuff
+export DYLD_FALLBACK_LIBRARY_PATH=/opt/developer/lib:$DYLD_FALLBACK_LIBRARY_PATH
+
+# Cuda stuff
+export PATH=/usr/local/cuda/bin:$PATH
+export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_FALLBACK_LIBRARY_PATH
+
+# Macports Stuff
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export MANPATH=/opt/local/share/man:$MANPATH
+export DYLD_FALLBACK_LIBRARY_PATH=/opt/local/lib:$DYLD_FALLBACK_LIBRARY_PATH
+export CPATH=/opt/local/include:$CPATH
+export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH
+export LDFLAGS="-L/opt/local/lib $LDFLAGS"
+
+# Peekabot Stuff
+#export PATH=/opt/peekabot/bin:$PATH
+#export DYLD_FALLBACK_LIBRARY_PATH=/opt/peekabot/lib:$DYLD_FALLBACK_LIBRARY_PATH
+
+# IPC Stuff
+export PATH=/opt/ipc/bin:$PATH
+export DYLD_FALLBACK_LIBRARY_PATH=/opt/ipc/lib:$DYLD_FALLBACK_LIBRARY_PATH
+export CPATH=/opt/ipc/include:$CPATH
+
+
+# ODE Stuff
+export PATH=/opt/ode/bin:$PATH
+export DYLD_FALLBACK_LIBRARY_PATH=/opt/ode/lib:$DYLD_FALLBACK_LIBRARY_PATH
+export CPATH=/opt/ode/include:$CPATH
+
+# Player Stuff
+#export PYTHONPATH=/opt/player/lib/python2.5/site-packages:$PYTHONPATH
+#export PATH=/opt/player/bin:$PATH
+#export DYLD_FALLBACK_LIBRARY_PATH=/opt/player/lib:$DYLD_FALLBACK_LIBRARY_PATH
+#export CPATH=/opt/player/include:$CPATH
+#export PKG_CONFIG_PATH=/opt/player/lib/pkgconfig:$PKG_CONFIG_PATH
+
+export PYTHONPATH=/opt/local/lib/python2.6/site-packages/gtk-2.0:$PYTHONPATH
+
+# ROS Stuff
+source /opt/ros/cturtle/setup.sh
+
+export ROS_HOSTNAME=localhost
+
+export ROS_PACKAGE_PATH=~/code/ros/multimaster-ros-pkg:~/code/ros/mrsl-alg:~/code/ros/kumargrp-ros-pkg:$ROS_PACKAGE_PATH
+
+alias robust-routing="export ROS_PACKAGE_PATH=~/code/ros/robust-routing:$ROS_PACKAGE_PATH"
+alias bearing-localization="export ROS_PACKAGE_PATH=~/code/ros/bearing-localization-with-rssi:$ROS_PACKAGE_PATH"
+alias signal-strength-mapping="export ROS_PACKAGE_PATH=~/code/ros/signal-strength-mapping:$ROS_PACKAGE_PATH"
+
+export ROS_MASTER_URI=http://localhost:11311/
+export PATH=$PATH:$ROS_ROOT/tools/rosrecord/bin
+
+export PATH=${ROS_ROOT}/tools/experimental/rxbag/bin:$PATH
+export PATH=${ROS_ROOT}/tools/rxtools/bin:$PATH
+
+# NMW Stuff
+#export NMW_PATH=~/code/nmw
+#export NMW_PKG_PATH=~/code/nmw-pkg
+#export DYLD_FALLBACK_LIBRARY_PATH=$NMW_PATH:$DYLD_FALLBACK_LIBRARY_PATH
+#export PATH=/opt/nmw/bin:$PATH
+
+export VIS_DIR=/Users/jonfink/code/git/vis
+
+# ARMADILLO Stuff
+export CPATH=$CPATH:/opt/armadillo/include
+export DYLD_FALLBACK_LIBRARY_PATH=/opt/armadillo/lib:$DYLD_FALLBACK_LIBRARY_PATH
+
+# CGAL Stuff
+export CPATH=$CPATH:/opt/cgal/include
+export DYLD_FALLBACK_LIBRARY_PATH=/opt/cgal/lib:$DYLD_FALLBACK_LIBRARY_PATH
+
+# WX stuff
+export DYLD_FALLBACK_LIBRARY_PATH=/opt/local/lib/wx-devel:$DYLD_FALLBACK_LIBRARY_PATH
+export CPATH=/Users/jonfink/src/wxPython/include:$CPATH
+
+# universal binary stuff
+export LDFLAGS="$LDFLAGS -arch i386 -arch x86_64"
+export CXXFLAGS="-arch i386 -arch x86_64"
+export CFLAGS="-arch i386 -arch x86_64"
+export CPPFLAGS="-arch i386 -arch x86_64"
+
+alias compile_32="export LDFLAGS=\"`echo $LDFLAGS | sed 's/-arch i386//g' | sed 's/-arch x86_64//g'` -arch i386\";
+                    export CXXFLAGS=\"`echo $CXXFLAGS | sed 's/-arch i386//g' | sed 's/-arch x86_64//g'` -arch i386\";
+                    export CFLAGS=\"`echo $CFLAGS | sed 's/-arch i386//g' | sed 's/-arch x86_64//g'` -arch i386\";
+                    export CPPFLAGS=\"`echo $CPPFLAGS | sed 's/-arch i386//g' | sed 's/-arch x86_64//g'` -arch i386\""
+
+alias compile_64="export LDFLAGS=\"`echo $LDFLAGS | sed 's/-arch i386//g' | sed 's/-arch x86_64//g'` -arch x86_64\";
+                    export CXXFLAGS=\"`echo $CXXFLAGS | sed 's/-arch i386//g' | sed 's/-arch x86_64//g'` -arch x86_64\";
+                    export CFLAGS=\"`echo $CFLAGS | sed 's/-arch i386//g' | sed 's/-arch x86_64//g'` -arch x86_64\";
+                    export CPPFLAGS=\"`echo $CPPFLAGS | sed 's/-arch i386//g' | sed 's/-arch x86_64//g'` -arch x86_64\""
+
+alias compile_universal="export LDFLAGS=\"`echo $LDFLAGS | sed 's/-arch i386//g' | sed 's/-arch x86_64//g'` -arch i386 -arch x86_64\";
+                    export CXXFLAGS=\"`echo $CXXFLAGS | sed 's/-arch i386//g' | sed 's/-arch x86_64//g'` -arch i386 -arch x86_64\";
+                    export CFLAGS=\"`echo $CFLAGS | sed 's/-arch i386//g' | sed 's/-arch x86_64//g'` -arch i386 -arch x86_64\";
+                    export CPPFLAGS=\"`echo $CPPFLAGS | sed 's/-arch i386//g' | sed 's/-arch x86_64//g'` -arch i386 -arch x86_64\""
+
+set_ros_master_uri()
+{
+	export ROS_MASTER_URI=http://$1:11311/
+}
+
+alias hibernateon="sudo pmset -a hibernatemode 5"
+alias hibernateoff="sudo pmset -a hibernatemode 3"

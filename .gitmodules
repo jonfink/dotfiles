@@ -77,3 +77,9 @@
 [submodule "emacs.d/vendor/feature-mode.el"]
 	path = emacs.d/vendor/feature-mode.el
 	url = https://github.com/michaelklishin/cucumber.el.git
+[submodule "emacs.d/vendor/yasnippets-latex"]
+	path = emacs.d/vendor/yasnippets-latex
+	url = https://github.com/madsdk/yasnippets-latex.git
+[submodule "emacs.d/vendor/reftex"]
+	path = emacs.d/vendor/reftex
+	url = https://github.com/emacsmirror/reftex.git
