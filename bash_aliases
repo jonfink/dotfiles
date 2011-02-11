@@ -86,13 +86,6 @@ function st {
 }
 
 ############################################################
-## Subversion
-############################################################
-
-# Remove all .svn folders from directory recursively
-alias svn-clean='find . -name .svn -print0 | xargs -0 rm -rf'
-
-############################################################
 ## OS X
 ############################################################
 
@@ -102,64 +95,10 @@ alias dstore-clean='find . -type f -name .DS_Store -print0 | xargs -0 rm'
 # Track who is listening to your iTunes music
 alias whotunes='lsof -r 2 -n -P -F n -c iTunes -a -i TCP@`hostname`:3689'
 
-############################################################
-## Ruby
-############################################################
-
-alias r="rake"
-alias a="autotest -q"
-alias aa="rake db:test:clone && a"
-alias smp="staticmatic preview ."
-
-function gemdir {
-  echo `rvm gemdir`
-}
-
-function gemfind {
-  local gems=`gemdir`/gems
-  echo `ls $gems | grep -i $1 | sort | tail -1`
-}
-
-# Use: gemcd <name>, cd's into your gems directory
-# that best matches the name provided.
-function gemcd {
-  cd `gemdir`/gems/`gemfind $1`
-}
-
-# Use: gemdoc <gem name>, opens the rdoc of the gem
-# that best matches the name provided.
-function gemdoc {
-  open `gemdir`/doc/`gemfind $1`/rdoc/index.html
-}
-
-############################################################
-## Bundler
-############################################################
-
-alias b="bundle"
-alias bi="b install --path vendor"
-alias bu="b update"
-alias be="b exec"
-alias binit="bi && bundle package && echo 'vendor/ruby' >> .gitignore"
-
-############################################################
-## Rails
-############################################################
-
-#alias rails="rails -m ~/.rails.d/template.rb"
-alias ss="script/server"
-alias sg="script/generate"
-alias sc="script/console"
-alias tl='tail -f log/development.log'
 
 ############################################################
 ## Miscellaneous
 ############################################################
-
-if [ -f /Applications/Emacs.app/Contents/MacOS/Emacs ]; then
-  alias emacs='TERM=xterm-256color /Applications/Emacs.app/Contents/MacOS/Emacs'
-  alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
-fi
 
 alias grep='GREP_COLOR="1;37;41" grep --color=auto'
 alias wgeto="wget -q -O -"
@@ -171,6 +110,17 @@ alias 256color="export TERM=xterm-256color"
 alias flushdns='dscacheutil -flushcache'
 
 alias whichlinux='uname -a; cat /etc/*release; cat /etc/issue'
+
+# cdf: cd to the directory in the Finder's front window
+alias cdf='cd "$(~/.zsh/bin/posd)"'
+
+# posfind: search the directory frontmost in the Finder
+function posfind { find "`~/.zsh/bin/posd`" -name "*$1*"; }
+
+
+# posgrep: grep the directory frontmost in the Finder
+function posgrep { grep -iIrn "$1" "`~/.zsh/bin/posd`"; }
+
 
 function serve {
   local port=$1
