@@ -257,7 +257,7 @@ set_title_tab
 
 source ~/.my_environment
 
-if [ -f $ROS_ROOT/tools/rosbash/rosbash ]
+if [ -f $ROS_ROOT/tools/rosbash/roszsh ]
 then
-	. $ROS_ROOT/tools/rosbash/rosbash
+	. $ROS_ROOT/tools/rosbash/roszsh
 fi

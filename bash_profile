@@ -1,5 +1,7 @@
 # ~/.bash_profile: executed by bash for login shells.
 
+echo "foo"
+
 if [ -e ~/.bashrc ] ; then
   . ~/.bashrc
 fi
