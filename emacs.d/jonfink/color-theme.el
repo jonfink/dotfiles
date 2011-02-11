@@ -7,9 +7,6 @@
 ;;(vendor 'color-theme-arjen)
 ;;(color-theme-arjen)
 
-(vendor 'my-color-theme)
-(color-theme-jon)
-
 ;; (color-theme-reset-faces)
 
 ;; Color-schemes that I thought were pleasing to the eye.  Most others are
@@ -28,8 +25,11 @@
 ;; (color-theme-emacs-21)
 ;; (color-theme-gtk-ide)
 
-(set-face-foreground 'region "white")
-(set-face-background 'region "slategray")
+;; (set-face-foreground 'region "white")
+;; (set-face-background 'region "slategray")
 
 (blink-cursor-mode)
 (set-cursor-color "orange")
+
+(vendor 'my-color-theme)
+(color-theme-jon)

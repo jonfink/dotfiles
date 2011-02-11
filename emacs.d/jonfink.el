@@ -32,7 +32,6 @@
 ;; (load "jonfink/hl-line")
 ;; (load "jonfink/iswitchb")
 
-(vendor 'color-theme)
 (vendor 'cmake-mode)
 (vendor 'uniquify)
 (vendor 'autorevert)
@@ -50,3 +49,5 @@
 (vendor 'yasnippet)
 (vendor 'mode-line-bell)
 ;; (vendor 'auctex)
+
+(vendor 'color-theme)

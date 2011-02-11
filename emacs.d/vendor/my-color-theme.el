@@ -23,7 +23,7 @@
       (widget-mouse-face . highlight))
      (default
        ((t (:stipple nil
-	    :background "Black"
+	    :background "gray9"
 	    :foreground "LightGray"
 	    :inverse-video nil
 	    :box nil
