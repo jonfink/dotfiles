@@ -3,7 +3,7 @@
 Clone this (or a forked version of this) repository, and update all the git submodules within.
 
     $ cd ~
-    $ git clone https://rmm5t@github.com/rmm5t/dotfiles.git .dotfiles
+    $ git clone https://jonfink@github.com/jonfink/dotfiles.git .dotfiles
     $ cd .dotfiles
     $ git submodule update --init --recursive
 
@@ -18,4 +18,6 @@ Clone this (or a forked version of this) repository, and update all the git subm
     $ ln -ns emacs   ~/.emacs
     $ ln -ns emacs.d ~/.emacs.d
 
+# Note about latex-snippets
 
+I had to add some symbolic links locally to the 'yasnippet/snippets/latex-mode' directory that point to 'yasnippets-latex' distribution...

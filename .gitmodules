@@ -83,6 +83,3 @@
 [submodule "emacs.d/vendor/reftex"]
 	path = emacs.d/vendor/reftex
 	url = https://github.com/emacsmirror/reftex.git
-[submodule "emacs.d/vendor/org-mode"]
-	path = emacs.d/vendor/org-mode
-	url = git://orgmode.org/org-mode.git
