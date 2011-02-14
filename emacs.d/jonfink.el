@@ -49,5 +49,6 @@
 (vendor 'yasnippet)
 (vendor 'mode-line-bell)
 ;; (vendor 'auctex)
+(vendor 'org-mode)
 
 (vendor 'color-theme)
