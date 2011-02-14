@@ -17,6 +17,9 @@
 (setq line-number-mode    t)
 (setq column-number-mode  t)
 
+;; No menu bar
+(setq menu-bar-mode nil)
+
 ;; Emacs gurus don't need no stinking scroll bars
 (when (fboundp 'toggle-scroll-bar)
   (toggle-scroll-bar -1))

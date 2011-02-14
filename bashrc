@@ -77,7 +77,7 @@ esac
 
 # Do not set PS1 for dumb terminals
 if [ "$TERM" != 'dumb'  ] && [ -n "$BASH" ]; then
-  export PS1='\[\033[32m\]\n[\s: \w] $(rvm_prompt) $(git_prompt)\n\[\033[31m\][\u@\h]\$ \[\033[00m\]'
+  export PS1='\[\033[32m\]\u@\h\[\033[31m\][\w]\[\033[00m\]\$ '
 fi
 
 ############################################################

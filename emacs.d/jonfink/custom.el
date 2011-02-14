@@ -10,7 +10,7 @@
  '(ns-tool-bar-display-mode (quote both) t)
  '(ns-tool-bar-size-mode (quote regular) t)
  '(scroll-bar-mode nil)
- '(tabbar-mode nil nil (tabbar))
+
  '(visual-line-mode nil t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

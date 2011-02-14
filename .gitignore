@@ -9,3 +9,4 @@ emacs.d/.org-id-locations
 *.elc
 
 *~
+/#bashrc#
