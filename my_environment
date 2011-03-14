@@ -47,7 +47,7 @@ source /opt/ros/cturtle/setup.sh
 
 export ROS_HOSTNAME=localhost
 
-export ROS_PACKAGE_PATH=~/code/ros/multimaster-ros-pkg:~/code/ros/mrsl-alg:~/code/ros/kumargrp-ros-pkg:$ROS_PACKAGE_PATH
+export ROS_PACKAGE_PATH=~/code/ros/GP:~/code/ros/multimaster-ros-pkg:~/code/ros/mrsl-alg:~/code/ros/kumargrp-ros-pkg:$ROS_PACKAGE_PATH
 
 alias robust-routing="export ROS_PACKAGE_PATH=~/code/ros/robust-routing:$ROS_PACKAGE_PATH"
 alias bearing-localization="export ROS_PACKAGE_PATH=~/code/ros/bearing-localization-with-rssi:$ROS_PACKAGE_PATH"
