@@ -53,9 +53,12 @@
 (setq delete-by-moving-to-trash t)
 
 ;; `brew install aspell --lang=en` (instead of ispell)
-(setq-default ispell-program-name "aspell")
-(setq ispell-list-command "list")
-(setq ispell-extra-args '("--sug-mode=ultra"))
+;; (setq-default ispell-program-name "aspell")
+;; (setq ispell-list-command "list")
+;; (setq ispell-extra-args '("--sug-mode=ultra"))
+
+;; enable fly-spell mode
+(add-hook 'text-mode-hook 'turn-on-flyspell)
 
 ;; zap-up-to-char, forward-to-word, backward-to-word, etc
 (require 'misc)

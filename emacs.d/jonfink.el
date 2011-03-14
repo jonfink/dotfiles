@@ -27,6 +27,7 @@
 ;;(load "jonfink/private" 'noerror)
 (load "jonfink/python")
 (load "jonfink/matlab")
+(load "jonfink/ros")
 
 
 ;; (load "jonfink/hl-line")
