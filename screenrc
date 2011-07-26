@@ -1,6 +1,8 @@
 # turn off startup message
 startup_message off
 
+shell /bin/zsh
+
 # change escape leader
 escape ^Zz
 

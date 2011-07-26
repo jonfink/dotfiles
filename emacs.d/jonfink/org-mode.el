@@ -14,6 +14,7 @@
                              "~/org/book/work.org"
                              "~/org/book/emacsbook.org"))
 
+
 ;; (global-set-key (kbd "C-c r") 'remember)
 ;; (add-hook 'remember-mode-hook 'org-remember-apply-template)
 ;; (setq org-remember-templates

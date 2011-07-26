@@ -10,6 +10,10 @@
                              "~/org/inbox.org"
                              "~/org/emacsbook.org"))
 
+(setq org-directory "~/org")
+(setq org-mobile-inbox-for-pull "~/org/flagged.org")
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
+
 ;;(setq org-agenda-files (list "~/org/book/home.org"
 ;;                             "~/org/book/work.org"
 ;;                             "~/org/book/emacsbook.org"))

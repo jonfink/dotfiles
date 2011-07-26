@@ -19,7 +19,7 @@
 (load "jonfink/dired")
 (load "jonfink/recentf")
 (load "jonfink/rectangle")
-;;(load "jonfink/org")
+;; (load "jonfink/org")
 (load "jonfink/flymake")
 (load "jonfink/javascript")
 (load "jonfink/mac")
@@ -33,7 +33,8 @@
 ;; (load "jonfink/hl-line")
 ;; (load "jonfink/iswitchb")
 
-(vendor 'cmake-mode)
+(vendor 'cmake-mode) ;; ensure this is after markdown-mode so that CMakeLists.txt is properly detected
+
 (vendor 'uniquify)
 (vendor 'autorevert)
 (vendor 'maxframe)
@@ -51,5 +52,6 @@
 (vendor 'mode-line-bell)
 ;; (vendor 'auctex)
 ;; (vendor 'org 'org-install)
-
+(vendor 'rosemacs)
 (vendor 'color-theme)
+

@@ -21,7 +21,7 @@
 ;; (global-set-key [(meta f8)]    'align-regexp)
 
 ;; Repeat
-(global-set-key [(control z)] 'repeat) ; was suspend-frame
+;; (global-set-key [(control z)] 'repeat) ; was suspend-frame
 
 ;; Mac OS X conventions
 ;; (global-set-key (kbd "M-a") 'mark-whole-buffer) ; was backward-sentence.
@@ -36,6 +36,14 @@
 (global-set-key "\M-g" 'goto-line)
 
 ;; Comment selected stuff
-(global-set-key "\C-c \C-c" 'comment-region)
+(global-set-key "\C-c\C-c" 'comment-region)
+(global-set-key "\C-c \C-c" 'uncomment-region)
+;; (global-set-key "\C-c \C-u" 'uncomment-region)
+
+;; Fill region
+(global-set-key "\C-c\C-f" 'fill-region)
+(global-set-key "\C-c \C-f" 'unfill-region)
 
 ;; (define-key osx-key-mode-map (kbd "A-n") 'my-new-frame-with-new-scratch)
+
+(global-set-key (kbd "C-c m") 'compile)

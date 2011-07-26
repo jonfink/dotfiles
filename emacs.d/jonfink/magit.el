@@ -16,5 +16,6 @@
      (define-key magit-mode-map (kbd "M-1") 'delete-other-windows)      ; was magit-show-level-1
      (defun magit-pull ()
        (interactive)
-       (magit-run-git-async "pull" "--rebase" "-v"))
+       ;;(magit-run-git-async "pull" "--rebase" "-v"))
+       (magit-run-git-async "pull" "-v"))
      ))
