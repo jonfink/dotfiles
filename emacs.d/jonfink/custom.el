@@ -12,7 +12,6 @@
  '(ns-tool-bar-display-mode (quote both) t)
  '(ns-tool-bar-size-mode (quote regular) t)
  '(scroll-bar-mode nil)
- '(tabbar-mode nil nil (tabbar))
  '(text-mode-hook (quote (smart-spacing-mode turn-on-flyspell auto-detect-wrap)))
  '(visual-line-mode t t)
  '(word-wrap t))

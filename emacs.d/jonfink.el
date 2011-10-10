@@ -29,12 +29,12 @@
 (load "jonfink/matlab")
 (load "jonfink/ros")
 
-
 ;; (load "jonfink/hl-line")
 ;; (load "jonfink/iswitchb")
 
 (vendor 'cmake-mode) ;; ensure this is after markdown-mode so that CMakeLists.txt is properly detected
 
+(vendor 'tabbar)
 (vendor 'uniquify)
 (vendor 'autorevert)
 (vendor 'maxframe)
@@ -52,6 +52,5 @@
 (vendor 'mode-line-bell)
 ;; (vendor 'auctex)
 ;; (vendor 'org 'org-install)
-(vendor 'rosemacs)
+;; (vendor 'rosemacs)
 (vendor 'color-theme)
-

@@ -83,3 +83,6 @@
 [submodule "emacs.d/vendor/reftex"]
 	path = emacs.d/vendor/reftex
 	url = https://github.com/emacsmirror/reftex.git
+[submodule "emacs.d/vendor/tabbar"]
+	path = emacs.d/vendor/tabbar
+	url = https://github.com/dholm/tabbar.git

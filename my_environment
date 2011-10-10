@@ -14,16 +14,17 @@ export PATH=/opt/avahi/bin:/opt/avahi/sbin:$PATH
 export DYLD_FALLBACK_LIBRARY_PATH=/opt/avahi/lib:$DYLD_FALLBACK_LIBRARY_PATH
 
 #Cuda stuff
-export PATH=/usr/local/cuda/bin:$PATH
-export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_FALLBACK_LIBRARY_PATH
+#export PATH=/usr/local/cuda/bin:$PATH
+#export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_FALLBACK_LIBRARY_PATH
 
 # Macports Stuff
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export MANPATH=/opt/local/share/man:$MANPATH
-export DYLD_FALLBACK_LIBRARY_PATH=/opt/local/lib:$DYLD_FALLBACK_LIBRARY_PATH
-export CPATH=/opt/local/include:$CPATH
-export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH
-export LDFLAGS="-L/opt/local/lib $LDFLAGS"
+PORTS=/opt/local
+export PATH=$PORTS/bin:/opt/local/sbin:$PATH
+export MANPATH=$PORTS/share/man:$MANPATH
+export DYLD_FALLBACK_LIBRARY_PATH=$PORTS/lib:$DYLD_FALLBACK_LIBRARY_PATH
+export CPATH=$PORTS/include:$CPATH
+export PKG_CONFIG_PATH=$PORTS/lib/pkgconfig:$PKG_CONFIG_PATH
+export LDFLAGS="-L$PORTS/lib $LDFLAGS"
 
 # Peekabot Stuff
 #export PATH=/opt/peekabot/bin:$PATH
@@ -47,7 +48,9 @@ export CPATH=/opt/ode/include:$CPATH
 #export CPATH=/opt/player/include:$CPATH
 #export PKG_CONFIG_PATH=/opt/player/lib/pkgconfig:$PKG_CONFIG_PATH
 
+# Python stuff
 export PYTHONPATH=/opt/local/lib/python2.6/site-packages/gtk-2.0:$PYTHONPATH
+export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.6/bin:$PATH
 
 # ROS Stuff
 source /opt/ros/diamondback/setup.sh
@@ -66,6 +69,10 @@ export ROS_PACKAGE_PATH=~/code/ros/scratch:$ROS_PACKAGE_PATH
 export ROS_PACKAGE_PATH=~/code/ros/vis-ros-pkg:$ROS_PACKAGE_PATH
 export ROS_PACKAGE_PATH=~/code/ros/multirobot-planning:$ROS_PACKAGE_PATH
 export ROS_PACKAGE_PATH=~/code/ros/my-nav-stack:$ROS_PACKAGE_PATH
+export ROS_PACKAGE_PATH=~/code/ros/joy:$ROS_PACKAGE_PATH
+export ROS_PACKAGE_PATH=~/code/ros/rviz:$ROS_PACKAGE_PATH
+export ROS_PACKAGE_PATH=~/code/ros/rf:$ROS_PACKAGE_PATH
+export ROS_PACKAGE_PATH=~/code/ros/rosbag_processing:$ROS_PACKAGE_PATH
 
 alias robust-routing="export ROS_PACKAGE_PATH=~/code/ros/robust-routing:$ROS_PACKAGE_PATH"
 alias bearing-localization="export ROS_PACKAGE_PATH=~/code/ros/bearing-localization-with-rssi:$ROS_PACKAGE_PATH"
@@ -95,8 +102,8 @@ export CPATH=$CPATH:/opt/cgal/include
 export DYLD_FALLBACK_LIBRARY_PATH=/opt/cgal/lib:$DYLD_FALLBACK_LIBRARY_PATH
 
 # WX stuff
-export DYLD_FALLBACK_LIBRARY_PATH=/opt/local/lib/wx-devel:$DYLD_FALLBACK_LIBRARY_PATH
-export CPATH=/Users/jonfink/src/wxPython/include:$CPATH
+#export DYLD_FALLBACK_LIBRARY_PATH=/opt/local/lib/wx-devel:$DYLD_FALLBACK_LIBRARY_PATH
+#export CPATH=/Users/jonfink/src/wxPython/include:$CPATH
 
 # universal binary stuff
 export LDFLAGS="$LDFLAGS -arch i386 -arch x86_64"

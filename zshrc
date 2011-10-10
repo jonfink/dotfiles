@@ -1,7 +1,7 @@
 ######################################################################
 #		      mako's zshrc file, v0.1
 #
-# 
+#
 ######################################################################
 
 # next lets set some enviromental/shell pref stuff up
@@ -40,7 +40,7 @@ zmodload -a zsh/zprof zprof
 zmodload -ap zsh/mapfile mapfile
 
 
-PATH="/Users/jonfink/.zsh/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin/:$PATH"
+PATH="/Users/jonfink/.zsh/bin:/opt/local/bin:/opt/local/sbin:$PATH"
 TZ="America/New_York"
 HISTFILE=$HOME/.zhistory
 HISTSIZE=1000
@@ -107,7 +107,7 @@ zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
 # allow one error for every three characters typed in approximate completer
 zstyle -e ':completion:*:approximate:*' max-errors \
     'reply=( $(( ($#PREFIX+$#SUFFIX)/2 )) numeric )'
-    
+
 # insert all expansions for expand completer
 zstyle ':completion:*:expand:*' tag-order all-expansions
 #
@@ -115,7 +115,7 @@ zstyle ':completion:*:expand:*' tag-order all-expansions
 # 1. All /etc/hosts hostnames are in autocomplete
 # 2. If you have a comment in /etc/hosts like #%foobar.domain,
 #    then foobar.domain will show up in autocomplete!
-zstyle ':completion:*' hosts $(awk '/^[^#]/ {print $2 $3" "$4" "$5}' /etc/hosts | grep -v ip6- && grep "^#%" /etc/hosts | awk -F% '{print $2}') 
+zstyle ':completion:*' hosts $(awk '/^[^#]/ {print $2 $3" "$4" "$5}' /etc/hosts | grep -v ip6- && grep "^#%" /etc/hosts | awk -F% '{print $2}')
 # formatting and messages
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*:descriptions' format '%B%d%b'
@@ -160,8 +160,8 @@ zstyle '*' single-ignored show
 function set_title_tab {
 
     function settab   {
-	
-		    # file settab  -- invoked only if iTerm or Konsole is running 
+
+		    # file settab  -- invoked only if iTerm or Konsole is running
 
 		    #  Set iterm window tab to current directory and penultimate directory if the
 		    #  shell process is running.  Truncate to leave the rightmost $rlength characters.
@@ -174,7 +174,7 @@ function set_title_tab {
 
 			# The $rlength variable prints only the 20 rightmost characters. Otherwise iTerm truncates
 			# what appears in the tab from the left.
-	     
+
 
 				# Chage the following to change the string that actually appears in the tab:
 
@@ -183,11 +183,11 @@ function set_title_tab {
 					rlength="20"   # number of characters to appear before truncation from the left
 
 		            echo -ne "\e]1;${(l:rlength:)tab_label}\a"
-	     
 
-		else  
 
-				# For KDE konsole tabs 
+		else
+
+				# For KDE konsole tabs
 
 				# Chage the following to change the string that actually appears in the tab:
 
@@ -200,8 +200,8 @@ function set_title_tab {
 		                dcop "$KONSOLE_DCOP_SESSION" renameSession "${(l:rlength:)tab_label}"
 		        else
 		            : # do nothing if tabs don't exist
-		        fi    
-	
+		        fi
+
 		fi
 	}
 
@@ -211,7 +211,7 @@ function set_title_tab {
 		# Change the following string to change what appears in the Title Bar label:
 
 
-			title_lab=$HOST:r:r::$PWD  
+			title_lab=$HOST:r:r::$PWD
 				# Prints the host name, two colons, absolute path for current directory
 
 			# Change the title bar label dynamically:
@@ -222,21 +222,21 @@ function set_title_tab {
 	# Set tab and title bar dynamically using above-defined functions
 
 		function title_tab_chpwd { settab ; settitle }
-		
+
 		# Now we need to run it:
 	    title_tab_chpwd
 
 	# Set tab or title bar label transiently to the currently running command
-	
-	if [[ "$TERM_PROGRAM" == "iTerm.app" ]];then		
-		function title_tab_preexec {  echo -ne "\e]1; $(history $HISTCMD | cut -b7- ) \a"  } 
-		function title_tab_precmd  { settab }	
+
+	if [[ "$TERM_PROGRAM" == "iTerm.app" ]];then
+		function title_tab_preexec {  echo -ne "\e]1; $(history $HISTCMD | cut -b7- ) \a"  }
+		function title_tab_precmd  { settab }
 	else
-		function title_tab_preexec {  echo -ne "\e]2; $(history $HISTCMD | cut -b7- ) \a"  } 
-		function title_tab_precmd  { settitle }      
+		function title_tab_preexec {  echo -ne "\e]2; $(history $HISTCMD | cut -b7- ) \a"  }
+		function title_tab_precmd  { settitle }
 	fi
 
- 
+
 	typeset -ga preexec_functions
 	preexec_functions+=title_tab_preexec
 
@@ -245,7 +245,7 @@ function set_title_tab {
 
 	typeset -ga chpwd_functions
 	chpwd_functions+=title_tab_chpwd
- 
+
 }
 
 ####################

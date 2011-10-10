@@ -30,13 +30,14 @@
 (global-set-key (kbd "C-'") 'match-paren)
 
 ;; ibuffer > list-buffers
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "\C-x\C-b") 'ibuffer)
 
 ;; Simple goto line
 (global-set-key "\M-g" 'goto-line)
 
 ;; Comment selected stuff
 (global-set-key "\C-c\C-c" 'comment-region)
+(global-set-key "\C-c;" 'comment-region)
 (global-set-key "\C-c \C-c" 'uncomment-region)
 ;; (global-set-key "\C-c \C-u" 'uncomment-region)
 
